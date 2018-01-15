@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "Fun Chat",
-    "description": "Communicate with people who are watching same Youtube channel's videos",
+    "description": "Communicate with people",
     "version": "0.1",
     "icons": {
       "128": "funchat.png"
