@@ -1,0 +1,47 @@
+{
+    "manifest_version": 2,
+    "name": "Fun Chat",
+    "description": "Communicate with people who are watching same Youtube channel's videos",
+    "version": "0.1",
+    "icons": {
+      "128": "funchat.png"
+    },
+    "browser_action": {
+      "default_icon": "funchat.png",
+      "default_popup": "chat.html"
+    },
+    "background": {
+      "page": "background.html"
+    },
+    "permissions": [
+      "identity",
+      "activeTab"
+    ],
+    "content_scripts": [{
+        "matches" : [
+            "*://*.youtube.com/*"
+        ],
+        "js": ["content.js"],
+        "run_at": "document_end"
+    }
+        
+    ],
+    "content_security_policy":"script-src 'self' https://www.gstatic.com/ https://*.firebaseio.com https://*.firebase.com https://*.cloudflare.com https://www.googleapis.com; object-src 'self'",
+    "oauth2": {
+      "client_id": "506630715952-a52gqbki1ef83o8ec1lt9k1i05mvmbbb.apps.googleusercontent.com",
+      "scopes": [
+        "https://www.googleapis.com/auth/userinfo.email",
+        "https://www.googleapis.com/auth/userinfo.profile"
+      ]
+    },
+    "key": "-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsl5G9Zi5IkhntfoCHTIf
+vfVHfjJnImV2TkPAAN9Szs70lUK/8NV+xCIL7H4VZ1pwTv1AlWvRIHRJfeS+fANK
+8QlV1U0EG2/DJxJbSMh1dkcwxQW/1NSLWAFEAPkBkXbDkbFumzajzVK6AxE5d/LI
+3W9jC1bcnE1A6wqK9TzN05xI5uqu4ArxKia4RMeYRhgYp9X2z2tFcTzsfq83ojqM
+Z9lOyLtJnmLZSbNnCoJinrsB3AntD7ZYtIAt/VSPMcHci9R8Ez8DbQndKraKtL7t
+6LQDlbOlDrE5MsRdWEPy5IMT2uuCgJZXp6ySZl4eft6V3TN0bZuTxQBtVDFVMGc+
+WQIDAQAB
+-----END PUBLIC KEY-----
+"
+}
